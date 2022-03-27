@@ -15,7 +15,43 @@ struct SnakeBoard: CustomStringConvertible {
     
     var snake: [SnakeCell] = []
     
-    func moveLeft(){
+    mutating func moveLeft(){
+        var newSnake: [SnakeCell] = []
+        newSnake.append(SnakeCell(col: snake[0].col - 1, row: snake[0].row))
+        for i in 0..<snake.count - 1 {
+            newSnake.append(snake[i])
+        }
+        snake = newSnake
+        
+    }
+    
+    mutating func moveUp(){
+        var newSnake: [SnakeCell] = []
+        newSnake.append(SnakeCell(col: snake[0].col, row: snake[0].row - 1))
+        for i in 0..<snake.count - 1 {
+            newSnake.append(snake[i])
+        }
+        snake = newSnake
+        
+    }
+    
+    mutating func moveRight(){
+        var newSnake: [SnakeCell] = []
+        newSnake.append(SnakeCell(col: snake[0].col + 1, row: snake[0].row))
+        for i in 0..<snake.count - 1 {
+            newSnake.append(snake[i])
+        }
+        snake = newSnake
+        
+    }
+    
+    mutating func moveFoward(){
+        var newSnake: [SnakeCell] = []
+        newSnake.append(SnakeCell(col: snake[0].col + 1, row: snake[0].row))
+        for i in 0..<snake.count - 1 {
+            newSnake.append(snake[i])
+        }
+        snake = newSnake
         
     }
     
