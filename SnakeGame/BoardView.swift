@@ -9,8 +9,7 @@ import UIKit
 
 class BoardView: UIView {
 
-    let cols: Int = 9
-    let rows: Int = 7
+ 
     
     let originX: CGFloat = 40
     let originY: CGFloat = 50
@@ -24,11 +23,16 @@ class BoardView: UIView {
     func drawGrid(){
         let gridPath = UIBezierPath()
         
-        for i in 0...rows {
-            gridPath.move(to: CGPoint(x: originX, y: originY))
-            gridPath.addLine(to: CGPoint(x: originX + CGFloat(cols) * cellSide, y: originY))
+        for i in 0...SnakeBoard.rows {
+            gridPath.move(to: CGPoint(x: originX, y: originY + CGFloat(i) * cellSide))
+            gridPath.addLine(to: CGPoint(x: originX + CGFloat(SnakeBoard.cols) * cellSide, y: originY + CGFloat(i) * cellSide))
         }
         
+        for i in 0...SnakeBoard.cols{
+            gridPath.move(to: CGPoint(x: originX + CGFloat(i) * cellSide, y: originY))
+            gridPath.addLine(to: CGPoint(x: originX + CGFloat(i) * cellSide, y: originY + CGFloat(SnakeBoard.rows) * cellSide))
+        }
+        UIColor.lightGray.setStroke()
         gridPath.stroke()
     }
     
