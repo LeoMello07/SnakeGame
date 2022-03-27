@@ -13,6 +13,7 @@
 		62AD240527F0E34E0063A750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62AD240327F0E34E0063A750 /* Main.storyboard */; };
 		62AD240727F0E3550063A750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62AD240627F0E3550063A750 /* Assets.xcassets */; };
 		62AD240A27F0E3550063A750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62AD240827F0E3550063A750 /* LaunchScreen.storyboard */; };
+		62AD241227F0E47F0063A750 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AD241127F0E47F0063A750 /* BoardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		62AD240627F0E3550063A750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62AD240927F0E3550063A750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62AD240B27F0E3550063A750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62AD241127F0E47F0063A750 /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				62AD240627F0E3550063A750 /* Assets.xcassets */,
 				62AD240827F0E3550063A750 /* LaunchScreen.storyboard */,
 				62AD240B27F0E3550063A750 /* Info.plist */,
+				62AD241127F0E47F0063A750 /* BoardViewController.swift */,
 			);
 			path = SnakeGame;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				62AD240227F0E34E0063A750 /* ViewController.swift in Sources */,
 				62AD23FE27F0E34E0063A750 /* AppDelegate.swift in Sources */,
 				62AD240027F0E34E0063A750 /* SceneDelegate.swift in Sources */,
+				62AD241227F0E47F0063A750 /* BoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
