@@ -10,8 +10,8 @@ import Foundation
 
 struct SnakeBoard: CustomStringConvertible {
     
-    static let cols: Int = 9
-    static let rows: Int = 7
+    static let cols: Int = 17
+    static let rows: Int = 15
     
     var snake: [SnakeCell] = []
     
@@ -32,10 +32,6 @@ struct SnakeBoard: CustomStringConvertible {
     mutating func moveDown(){
         snake = updateSnake(newHead: SnakeCell(col: snake[0].col, row: snake[0].row + 1))
     }
-    
-//    mutating func moveFoward(){
-//        snake = updateSnake(newHead: SnakeCell(col: snake[0].col + 1, row: snake[0].row))
-//    }
     
     func updateSnake(newHead: SnakeCell) -> [SnakeCell]{
         var newSnake: [SnakeCell] = []
