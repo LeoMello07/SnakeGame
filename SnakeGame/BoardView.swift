@@ -30,9 +30,23 @@ class BoardView: UIView {
     }
     
     func drawSnake(){
-        UIColor.green.setFill()
-        let cell = UIBezierPath(roundedRect: CGRect(x: originX, y: originY, width: cellSide, height: cellSide), cornerRadius: 5)
-        cell.fill()
+        
+        
+        if board.snake.isEmpty {
+            return
+         }
+        
+        let snakeHead = board.snake.first!
+        UIColor.black.setFill()
+        UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(snakeHead.col) * cellSide, y: originY + CGFloat(snakeHead.row) * cellSide, width: cellSide, height: cellSide), cornerRadius: 5).fill()
+    
+        UIColor.yellow.setFill()
+        for i in 1..<board.snake.count {
+            let cell = board.snake[i]
+            UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(cell.col) * cellSide, y: originY + CGFloat(cell.row) * cellSide, width: cellSide, height: cellSide), cornerRadius: 5).fill()
+        }
+        
+        
     }
 
     func drawGrid(){

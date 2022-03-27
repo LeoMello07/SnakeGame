@@ -15,6 +15,10 @@ struct SnakeBoard: CustomStringConvertible {
     
     var snake: [SnakeCell] = []
     
+    func moveLeft(){
+        
+    }
+    
     
     func isOnSnake(col: Int, row: Int) -> Bool{
         for cell in snake {
@@ -39,7 +43,10 @@ struct SnakeBoard: CustomStringConvertible {
             
             for col in 0..<SnakeBoard.cols {
                 if isOnSnake(col: col, row: row){
-                    desc += "o"
+                    let snakeHead = snake[0]
+                    if snake[0].col == col && snake[0].row == row{
+                        desc += "x"
+                    } else { desc += "o" }
                 } else { desc += "." }
             }
             desc += "\n"
