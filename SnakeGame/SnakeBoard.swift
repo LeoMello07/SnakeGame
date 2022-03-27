@@ -16,43 +16,34 @@ struct SnakeBoard: CustomStringConvertible {
     var snake: [SnakeCell] = []
     
     mutating func moveLeft(){
-        var newSnake: [SnakeCell] = []
-        newSnake.append(SnakeCell(col: snake[0].col - 1, row: snake[0].row))
-        for i in 0..<snake.count - 1 {
-            newSnake.append(snake[i])
-        }
-        snake = newSnake
+       snake = updateSnake(newHead: SnakeCell(col: snake[0].col - 1, row: snake[0].row))
         
     }
     
     mutating func moveUp(){
-        var newSnake: [SnakeCell] = []
-        newSnake.append(SnakeCell(col: snake[0].col, row: snake[0].row - 1))
-        for i in 0..<snake.count - 1 {
-            newSnake.append(snake[i])
-        }
-        snake = newSnake
+        snake = updateSnake(newHead: SnakeCell(col: snake[0].col, row: snake[0].row - 1))
         
     }
     
     mutating func moveRight(){
-        var newSnake: [SnakeCell] = []
-        newSnake.append(SnakeCell(col: snake[0].col + 1, row: snake[0].row))
-        for i in 0..<snake.count - 1 {
-            newSnake.append(snake[i])
-        }
-        snake = newSnake
-        
+        snake = updateSnake(newHead: SnakeCell(col: snake[0].col + 1, row: snake[0].row))
     }
     
-    mutating func moveFoward(){
+    mutating func moveDown(){
+        snake = updateSnake(newHead: SnakeCell(col: snake[0].col, row: snake[0].row + 1))
+    }
+    
+//    mutating func moveFoward(){
+//        snake = updateSnake(newHead: SnakeCell(col: snake[0].col + 1, row: snake[0].row))
+//    }
+    
+    func updateSnake(newHead: SnakeCell) -> [SnakeCell]{
         var newSnake: [SnakeCell] = []
-        newSnake.append(SnakeCell(col: snake[0].col + 1, row: snake[0].row))
+        newSnake.append(newHead)
         for i in 0..<snake.count - 1 {
             newSnake.append(snake[i])
         }
-        snake = newSnake
-        
+        return newSnake
     }
     
     
