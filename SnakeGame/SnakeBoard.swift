@@ -16,6 +16,12 @@ struct SnakeBoard: CustomStringConvertible {
     var description: String {
         var desc = ""
         
+        for row in 0..<SnakeBoard.rows {
+            for cols in 0..<SnakeBoard.cols {
+                desc += " ."
+            }
+            desc += "\n"
+        }
         return desc
     }
     
