@@ -69,12 +69,12 @@
 				62AD241527F0E9AA0063A750 /* SnakeBoard.swift */,
 				62AD241A27F1054F0063A750 /* SnakeCell.swift */,
 				62AD240127F0E34E0063A750 /* ViewController.swift */,
+				62AD241C27F22F540063A750 /* MovingDirection.swift */,
 				62AD241327F0E5100063A750 /* BoardView.swift */,
 				62AD240327F0E34E0063A750 /* Main.storyboard */,
 				62AD240827F0E3550063A750 /* LaunchScreen.storyboard */,
 				62AD240627F0E3550063A750 /* Assets.xcassets */,
 				62AD240B27F0E3550063A750 /* Info.plist */,
-				62AD241C27F22F540063A750 /* MovingDirection.swift */,
 			);
 			path = SnakeGame;
 			sourceTree = "<group>";
