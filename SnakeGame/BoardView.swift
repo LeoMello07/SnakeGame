@@ -5,21 +5,32 @@
 //  Created by Leonardo Mello on 27/03/22.
 //
 
+//VIEW
+
 import UIKit
 
 class BoardView: UIView {
 
- 
-    
     let originX: CGFloat = 40
     let originY: CGFloat = 50
     let cellSide: CGFloat = 20
     
     var shadowSnake: [SnakeCell] = []
     
+    var shadowFruitCol: Int = Int.min
+    var shadowFruitRow: Int = Int.min
+    
     override func draw(_ rect: CGRect) {
         drawGrid()
         drawSnake()
+        drawFruit()
+    }
+    
+    func drawFruit(){
+        
+        UIColor.systemPink.setFill()
+        UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(shadowFruitCol) * cellSide, y: originY + CGFloat(shadowFruitRow) * cellSide, width: cellSide, height: cellSide), cornerRadius: 30).fill()
+        
     }
     
     func drawSnake(){
@@ -35,7 +46,7 @@ class BoardView: UIView {
         UIColor.yellow.setFill()
         for i in 1..<shadowSnake.count {
             let cell = shadowSnake[i]
-            UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(cell.col) * cellSide, y: originY + CGFloat(cell.row) * cellSide, width: cellSide, height: cellSide), cornerRadius: 5).fill()
+            UIBezierPath(roundedRect: CGRect(x: originX + CGFloat(cell.col) * cellSide, y: originY + CGFloat(cell.row) * cellSide, width: cellSide, height: cellSide), cornerRadius: 0).fill()
         }
         
         
