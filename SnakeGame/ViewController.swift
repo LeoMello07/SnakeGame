@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         updateUI()
      
         
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (Timer) in
             
             switch self.direction {
             case .left:
@@ -42,8 +42,6 @@ class ViewController: UIViewController {
             case .down:
                 self.board.moveDown()
             }
-            
-            self.board.moveDown()
             self.updateUI()
         }
     
